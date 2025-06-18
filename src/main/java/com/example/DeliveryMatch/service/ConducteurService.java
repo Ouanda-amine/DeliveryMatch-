@@ -37,9 +37,10 @@ public class ConducteurService {
 
     public ConducteurDto updateConducteur(ConducteurDto conducteurDto , Long id) {
         Conducteur conducteur = conducteurRipository.findById(id).get();
-        conducteur.setEmail(conducteurDto.getEmail());
         conducteur.setFirstName(conducteurDto.getFirstName());
         conducteur.setLastName(conducteurDto.getLastName());
+        conducteur.setEmail(conducteurDto.getEmail());
+        conducteur.setPassword(conducteurDto.getPassword());
 
         return conducteurMapper.conducteurToDto(conducteurRipository
                 .save(conducteurMapper.dtoToConducteur(conducteurDto)));

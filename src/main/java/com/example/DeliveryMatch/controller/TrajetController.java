@@ -32,4 +32,14 @@ public class TrajetController {
     public TrajetDto updateTrajet(@PathVariable Long id ,@RequestBody TrajetDto trajetDto){
         return trajetService.updateTrajet(id , trajetDto);
     }
+
+    @DeleteMapping("/trajetSup/{id}")
+    public void deletetrajet(@PathVariable Long id ){
+        trajetService.deleteTrajet(id);
+    }
+
+    @GetMapping("/TrajetsOfConducteur/{id}")
+    public List<TrajetDto> getTrajetsByConducteurId(@PathVariable Long id){
+        return trajetService.getTrajetsByConducteurId(id);
+    }
 }

@@ -53,4 +53,10 @@ public class TrajetService {
     public  void deleteTrajet(Long id) {
         trajetRepository.deleteById(id);
     }
+
+    public List<TrajetDto> getTrajetsByConducteurId(Long id){
+        return trajetRepository.getTrajetByConducteur_Id(id).stream()
+                .map(trajetMapper::toTrajetDto)
+                .toList();
+    }
 }
