@@ -16,6 +16,11 @@ public class Demande {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
     private Long id;
+
+    private String dimension;
+    private String poids;
+    private String type ;
+
     @ManyToOne
     private Expediteur expediteur;
 

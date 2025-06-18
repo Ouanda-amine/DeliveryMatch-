@@ -43,7 +43,7 @@ public class ExpediteurService {
         expediteur.setFirstName(expediteurDto.getFirstName());
         expediteur.setLastName(expediteurDto.getLastName());
 
-        return expediteurMapper.ToExpediteurDto(expediteurRepository.save(expediteurMapper.ToExpediteurEntity(expediteurDto)))
+        return expediteurMapper.ToExpediteurDto(expediteurRepository.save(expediteurMapper.ToExpediteurEntity(expediteurDto)));
     }
 
     public void DeleteExpediteur(Long id){
