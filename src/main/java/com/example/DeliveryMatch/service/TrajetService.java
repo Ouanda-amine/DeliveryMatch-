@@ -59,4 +59,10 @@ public class TrajetService {
                 .map(trajetMapper::toTrajetDto)
                 .toList();
     }
+
+
+
+
+
+
 }

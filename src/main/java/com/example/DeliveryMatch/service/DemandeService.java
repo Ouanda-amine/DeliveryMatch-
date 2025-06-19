@@ -56,4 +56,9 @@ public class DemandeService {
         demandeRepository.deleteById(id);
     }
 
+    public List<DemandeDto> getDemandeByIdExpediteur(Long id){
+        return demandeRepository.getDemandeByExpediteur_Id(id).stream()
+                .map(demandeMapper::ToDemandeDTO).toList();
+    }
+
 }

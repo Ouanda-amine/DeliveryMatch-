@@ -9,6 +9,8 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
+@RequestMapping("/api/v1")
+
 public class ExpediteurController {
 
     public ExpediteurService expediteurService;

@@ -9,6 +9,8 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
+@RequestMapping("/api/v1")
+
 public class DemandeControlleur {
 
     public DemandeService demandeService ;
@@ -38,6 +40,11 @@ public class DemandeControlleur {
     @DeleteMapping("supDemande/{id}")
     public void DeleteDemande (@PathVariable Long id){
         demandeService.deleteById(id);
+    }
+
+    @GetMapping("/DemandesOfExpediteur/{id}")
+    public List<DemandeDto> getDemandesByExpediteurID(@PathVariable Long id){
+        return demandeService.getDemandeByIdExpediteur(id);
     }
 
 
